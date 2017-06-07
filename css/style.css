@@ -8,13 +8,22 @@ body {
 }
 
 .container {
-	width: 50%;
+	width: 70%;
 	padding: 0 1%;
 	margin: 0 auto;
 }
 
+form {
+	position: relative;
+
+	width: 95%;
+	margin: 30px 0;
+}
+
 input[type="text"] {
-	width: 50%;
+	box-sizing: border-box;
+	min-width: 400px;
+	width: 99%;
 	border: none;
 	outline: none;
 
@@ -24,10 +33,11 @@ input[type="text"] {
 	color: #ec5a62;
 }
 
+input::-webkit-input-placeholder { color: #c2c2c2; }
+
 input[type="text"] + button {
-	position: relative;
-	top: -30px;
-	right: 0;
+	position: absolute;
+	top: 20px;
 
 	width: 65px;
 	height: 65px;
@@ -38,9 +48,25 @@ input[type="text"] + button {
 	background: url(../img/magnifier.svg);
 }
 
+.list-container {
+	font-size: 0;
+}
+
 .list {
-	width: 32%;
 	display: inline-block;
+	width: 31.3%;
+	margin-right: 3%;
+
+	vertical-align: top;
+}
+
+.list h3 {
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.list:last-child {
+	margin-right: 0;
 }
 
 .list ul {
@@ -48,9 +74,42 @@ input[type="text"] + button {
 	padding: 0;
 
 	list-style: none;
+	font-size: .8rem;
+}
+
+.list li {
+	margin-bottom: 5px;
 }
 
 .list a {
 	display: block;
 	padding: 10px;
+
+	text-decoration: none;
+	font-weight: bold;
+	background: rgba(118, 117, 128, .05);
+	color: #c2c2c2;
+}
+
+.list a:hover {
+	background: rgba(118, 117, 128, 0.1);
+	color: #ec5a62;
+}
+
+.list a img {
+	display: inline-block;
+	margin-right: 10px;
+
+	vertical-align: middle;
+}
+
+.list-people img {
+	border-radius: 50%;
+}
+
+
+@media screen and (max-width: 800px) {
+	button {
+		display: none !important;
+	}
 }
